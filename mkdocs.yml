@@ -3,3 +3,7 @@ nav:
     - Terminal: index.md
 theme:
     name: material
+    palette:
+        scheme: slate
+        primary: cyan
+        accent: cyan
