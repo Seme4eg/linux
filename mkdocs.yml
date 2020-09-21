@@ -1,4 +1,6 @@
 site_name: linux knowledge
+repo_url: https://github.com/Seme4eg/linux
+repo_name: linux knowledge
 nav:
     - Terminal: index.md
 theme:
@@ -7,3 +9,10 @@ theme:
         scheme: slate
         primary: cyan
         accent: cyan
+    font:
+        text: Montserrat
+    features:
+        - instant
+        - tabs
+    icon:
+        repo: fontawesome/brands/gitkraken
