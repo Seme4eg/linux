@@ -1,3 +1,5 @@
 site_name: linux knowledge
 nav:
     - Terminal: index.md
+theme:
+    name: material
