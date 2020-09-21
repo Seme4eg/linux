@@ -16,3 +16,7 @@ theme:
         - tabs
     icon:
         repo: fontawesome/brands/gitkraken
+
+markdown_extensions:
+    - toc:
+        permalink: true
