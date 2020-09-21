@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#linux-terminal-knowledge" class="md-skip">
           Skip to content
         </a>
       
@@ -215,9 +215,80 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Terminal
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="." title="Terminal" class="md-nav__link md-nav__link--active">
       Terminal
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Основные команды
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Перемещение по каталогам
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Вспомогательные программы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Ввод и вывод с помощью оболочки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Получение списка процессов и управление ими
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Режимы файлов и права доступа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Архивирование и сжатие файлов
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -239,6 +310,63 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Основные команды
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Перемещение по каталогам
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Вспомогательные программы
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Ввод и вывод с помощью оболочки
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Получение списка процессов и управление ими
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    Режимы файлов и права доступа
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    Архивирование и сжатие файлов
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -257,7 +385,8 @@
                   
                 
                 
-                <h1 id="_1">Основные команды</h1>
+                <h1 id="linux-terminal-knowledge">linux terminal knowledge<a class="headerlink" href="#linux-terminal-knowledge" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Основные команды<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><code>cat {имя_файла} {file_name}</code> - выводит содеримое одного или нескольких файлов</p>
 <blockquote>
 <p>Пример: <code>cat file1 file2</code></p>
@@ -281,7 +410,7 @@
 <p><code>rm {название_файла}</code> - удаление файла</p>
 <p><code>echo {Сообщение}</code> - выводит какое-либо сообщение в консоли
     - <code>echo {сообщение} &gt; {название_файла}</code> - записывает какое-либо сообщение в указанный файл</p>
-<h1 id="_2">Перемещение по каталогам</h1>
+<h2 id="_2">Перемещение по каталогам<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><code>cd</code> - переход в другой каталог</p>
 <ul>
 <li><code>сd ..</code> - вернуться в предыдущий каталог</li>
@@ -301,7 +430,7 @@
 Следующая ко­манда выдаст список файлов в текущем каталоге: <code>echo *</code></p>
 <p><code>?</code> - указывает оболочке на то, что необходимо подставить только один произвольный символ. Например -
 комбинации b?at будут соответствовать имена boat и brat</p>
-<h1 id="_3">Вспомогательные программы</h1>
+<h2 id="_3">Вспомогательные программы<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><code>grep {word} {file_name}</code> - выдает строки из файла или входного потока, которые соответству­ют какому-либо выражению</p>
 <ul>
 <li><code>$ grep root /etc/passwd</code> - напечатать строки из файла <code>/etc/passwd</code>, которые содержат текст root</li>
@@ -359,7 +488,7 @@
 <blockquote>
 <p>Сортировка происходит только в терминале, сам файл не изменяется</p>
 </blockquote>
-<h1 id="_4">Ввод и вывод с помощью оболочки</h1>
+<h2 id="_4">Ввод и вывод с помощью оболочки<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><code>$ command &gt; file</code> - направить результат команды command в файл</p>
 <blockquote>
 <p>Оболочка создаст файл file, если его еще нет. Если такой файл существует, то оболочка сначала
@@ -373,7 +502,7 @@
 <p>С помощью нотации <code>&gt;&amp;</code> можно направить стандартную ошибку туда же, куда осуществляет­ся стандартный
 вывод -- <code>$ ls /fffffffff &gt; f 2&gt;&amp;1</code></p>
 <p><code>$ head &lt; /proc/cpuinfo</code> - отправить файл на стандартный ввод команды (оператор &lt;)</p>
-<h1 id="_5">Получение списка процессов и управление ими</h1>
+<h2 id="_5">Получение списка процессов и управление ими<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><code>ps</code> - вывести список работающих процессов</p>
 <ul>
 <li><code>PID</code>  — идентификатор процесса (по PID'у можно убивать процессы)</li>
@@ -415,7 +544,7 @@
 <ul>
 <li><code>$ gunzip file.gz &amp;</code> - запуск распаковки файла в фоне (процесс будет работат в фоне, а в консоли выведется строка приглашения)</li>
 </ul>
-<h1 id="_6">Режимы файлов и права доступа</h1>
+<h2 id="_6">Режимы файлов и права доступа<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p><code>chmod</code> - удобный инструмент для повышения безопасности ОС и позволяет назначить права доступа к файлам или каталогам</p>
 <blockquote>
 <p>терминал --&gt; ls -l --&gt; слева от выведенных файлов надписи вроде -rw-rw-r-- == права доступа</p>
@@ -462,7 +591,7 @@
 - аргумент <code>linkname</code> - имя символической ссылки
 - аргумент <code>target</code> - задает путь к файлу или каталогу, к которому ведет ссылка
 флаг <code>-s</code> определяет символическую ссылку</p>
-<h1 id="_7">Архивирование и сжатие файлов</h1>
+<h2 id="_7">Архивирование и сжатие файлов<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>gzip file</code> - для сжатия</li>
 <li><code>gunzip file.gz</code> - декомпрессия файла <file>.gz и уда­ления суффикса из названия</li>
