@@ -1,0 +1,860 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.13">
+    
+    
+      
+        <title>Terminal - linux knowledge</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.077507d7.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ff0a5ce4.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bdd6">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700%7C&display=fallback">
+        <style>body,input{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#terminal-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="linux knowledge" class="md-header-nav__button md-logo" aria-label="linux knowledge">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            linux knowledge
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Terminal
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Seme4eg/linux/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592 512"><path d="M565.7 118.1c-2.3-6.1-9.3-9.2-15.3-6.6-5.7 2.4-8.5 8.9-6.3 14.6 10.9 29 16.9 60.5 16.9 93.3 0 134.6-100.3 245.7-230.2 262.7V358.4c7.9-1.5 15.5-3.6 23-6.2v104c106.7-25.9 185.9-122.1 185.9-236.8 0-91.8-50.8-171.8-125.8-213.3-5.7-3.2-13-.9-15.9 5-2.7 5.5-.6 12.2 4.7 15.1 67.9 37.6 113.9 110 113.9 193.2 0 93.3-57.9 173.1-139.8 205.4v-92.2c14.2-4.5 24.9-17.7 24.9-33.5 0-13.1-6.8-24.4-17.3-30.5 8.3-79.5 44.5-58.6 44.5-83.9V170c0-38-87.9-161.8-129-164.7-2.5-.2-5-.2-7.6 0C251.1 8.3 163.2 132 163.2 170v14.8c0 25.3 36.3 4.3 44.5 83.9-10.6 6.1-17.3 17.4-17.3 30.5 0 15.8 10.6 29 24.8 33.5v92.2c-81.9-32.2-139.8-112-139.8-205.4 0-83.1 46-155.5 113.9-193.2 5.4-3 7.4-9.6 4.7-15.1-2.9-5.9-10.1-8.2-15.9-5-75 41.5-125.8 121.5-125.8 213.3 0 114.7 79.2 210.8 185.9 236.8v-104c7.6 2.5 15.1 4.6 23 6.2v123.7C131.4 465.2 31 354.1 31 219.5c0-32.8 6-64.3 16.9-93.3 2.2-5.8-.6-12.2-6.3-14.6-6-2.6-13 .4-15.3 6.6C14.5 149.7 8 183.8 8 219.5c0 155.1 122.6 281.6 276.3 287.8V361.4c6.8.4 15 .5 23.4 0v145.8C461.4 501.1 584 374.6 584 219.5c0-35.7-6.5-69.8-18.3-101.4zM365.9 275.5c13 0 23.7 10.5 23.7 23.7 0 13.1-10.6 23.7-23.7 23.7-13 0-23.7-10.5-23.7-23.7 0-13.1 10.6-23.7 23.7-23.7zm-139.8 47.3c-13.2 0-23.7-10.7-23.7-23.7s10.5-23.7 23.7-23.7c13.1 0 23.7 10.6 23.7 23.7 0 13-10.5 23.7-23.7 23.7z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linux knowledge
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="linux knowledge" class="md-nav__button md-logo" aria-label="linux knowledge">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    linux knowledge
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Seme4eg/linux/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592 512"><path d="M565.7 118.1c-2.3-6.1-9.3-9.2-15.3-6.6-5.7 2.4-8.5 8.9-6.3 14.6 10.9 29 16.9 60.5 16.9 93.3 0 134.6-100.3 245.7-230.2 262.7V358.4c7.9-1.5 15.5-3.6 23-6.2v104c106.7-25.9 185.9-122.1 185.9-236.8 0-91.8-50.8-171.8-125.8-213.3-5.7-3.2-13-.9-15.9 5-2.7 5.5-.6 12.2 4.7 15.1 67.9 37.6 113.9 110 113.9 193.2 0 93.3-57.9 173.1-139.8 205.4v-92.2c14.2-4.5 24.9-17.7 24.9-33.5 0-13.1-6.8-24.4-17.3-30.5 8.3-79.5 44.5-58.6 44.5-83.9V170c0-38-87.9-161.8-129-164.7-2.5-.2-5-.2-7.6 0C251.1 8.3 163.2 132 163.2 170v14.8c0 25.3 36.3 4.3 44.5 83.9-10.6 6.1-17.3 17.4-17.3 30.5 0 15.8 10.6 29 24.8 33.5v92.2c-81.9-32.2-139.8-112-139.8-205.4 0-83.1 46-155.5 113.9-193.2 5.4-3 7.4-9.6 4.7-15.1-2.9-5.9-10.1-8.2-15.9-5-75 41.5-125.8 121.5-125.8 213.3 0 114.7 79.2 210.8 185.9 236.8v-104c7.6 2.5 15.1 4.6 23 6.2v123.7C131.4 465.2 31 354.1 31 219.5c0-32.8 6-64.3 16.9-93.3 2.2-5.8-.6-12.2-6.3-14.6-6-2.6-13 .4-15.3 6.6C14.5 149.7 8 183.8 8 219.5c0 155.1 122.6 281.6 276.3 287.8V361.4c6.8.4 15 .5 23.4 0v145.8C461.4 501.1 584 374.6 584 219.5c0-35.7-6.5-69.8-18.3-101.4zM365.9 275.5c13 0 23.7 10.5 23.7 23.7 0 13.1-10.6 23.7-23.7 23.7-13 0-23.7-10.5-23.7-23.7 0-13.1 10.6-23.7 23.7-23.7zm-139.8 47.3c-13.2 0-23.7-10.7-23.7-23.7s10.5-23.7 23.7-23.7c13.1 0 23.7 10.6 23.7 23.7 0 13-10.5 23.7-23.7 23.7z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linux knowledge
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="General info" class="md-nav__link">
+      General info
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Terminal
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Terminal" class="md-nav__link md-nav__link--active">
+      Terminal
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dirs-commands" class="md-nav__link">
+    dirs commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirecting-the-output-of-a-command" class="md-nav__link">
+    redirecting the output of a command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-and-manage-processes" class="md-nav__link">
+    view and manage processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-permissions-and-ownership" class="md-nav__link">
+    File permissions and ownership
+  </a>
+  
+    <nav class="md-nav" aria-label="File permissions and ownership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Способы назначения прав
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Архивирование и сжатие файлов
+  </a>
+  
+    <nav class="md-nav" aria-label="Архивирование и сжатие файлов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gzip" class="md-nav__link">
+    GZIP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    TAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targz" class="md-nav__link">
+    Распаковка .tar.gz:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Другие утилиты сжатия:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-info" class="md-nav__link">
+    Other info
+  </a>
+  
+    <nav class="md-nav" aria-label="Other info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../linux_dirs.md" title="Root directories" class="md-nav__link">
+      Root directories
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../other_info/" title="Other info" class="md-nav__link">
+      Other info
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    basics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dirs-commands" class="md-nav__link">
+    dirs commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirecting-the-output-of-a-command" class="md-nav__link">
+    redirecting the output of a command
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-and-manage-processes" class="md-nav__link">
+    view and manage processes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-permissions-and-ownership" class="md-nav__link">
+    File permissions and ownership
+  </a>
+  
+    <nav class="md-nav" aria-label="File permissions and ownership">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Способы назначения прав
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Архивирование и сжатие файлов
+  </a>
+  
+    <nav class="md-nav" aria-label="Архивирование и сжатие файлов">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gzip" class="md-nav__link">
+    GZIP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    TAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#targz" class="md-nav__link">
+    Распаковка .tar.gz:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Другие утилиты сжатия:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-info" class="md-nav__link">
+    Other info
+  </a>
+  
+    <nav class="md-nav" aria-label="Other info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    grep
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Seme4eg/linux/edit/master/docs/terminal_commands.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="terminal-commands">Terminal commands<a class="headerlink" href="#terminal-commands" title="Permanent link">&para;</a></h1>
+<h2 id="basics">basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<p><code>man {command}</code> - get documentation for {command}</p>
+<p><code>cat {имя_файла} {file_name}</code> - выводит содеримое одного или нескольких файлов</p>
+<p><code>ls</code> - выводит перечень содержимого какого-либо каталога
+- <code>-l</code> - получить детализирован­ный список,
+- <code>-a</code> - показывает все скрытые файлы помимо тех, что видны (файлы, начинающиеся с точек)
+- <code>-F</code> - отобразить информацию о типах файлов</p>
+<p><code>cp {имя_файла} {имя_копии} [dir]</code> - копирует файлы</p>
+<p><code>mv {имя_файла} {новое_имя} [dir]</code> - переименовывает файл / перемещает файлы в указанную дир-ю</p>
+<p><code>touch {file_name} [file_names]</code> - создание файла в текущей дирректории
+<code>&gt; {file_name}</code> - создание файла в определенной дирректории
+<code>rm {название_файла}</code> - удаление файла</p>
+<p><code>echo {Сообщение}</code> - выводит какое-либо сообщение в консоли</p>
+<p><code>clear</code> - очистить терминал
+<code>exit</code> - выход из терминала
+<code>reset</code> - если консоль зависла, то эта команда ее перезагрузит</p>
+<h2 id="dirs-commands">dirs commands<a class="headerlink" href="#dirs-commands" title="Permanent link">&para;</a></h2>
+<p><code>pwd</code> - показать текущую дирректорию</p>
+<p><code>cd</code> - переход в другой каталог
+- <code>..</code> - вернуться в предыдущий каталог
+- <code>/</code> - переход в корневой каталог
+- <code>-</code> - возврат к предыдущей дирректории
+- <code>~</code> - root dir</p>
+<p><code>mkdir {dir_name}</code> - создание папки
+<code>rmdir {имя_дирректории}</code> - удаляет дирректорию</p>
+<blockquote>
+<p>Если каталог не пуст:
+<code>-r</code> -- рекурсивное удаление, которое последовательно удаляет все, что находится внутри каталога dir
+<code>-f</code> -- делает эту операцию принудительной</p>
+</blockquote>
+<h2 id="redirecting-the-output-of-a-command">redirecting the output of a command<a class="headerlink" href="#redirecting-the-output-of-a-command" title="Permanent link">&para;</a></h2>
+<p><code>$ command &gt; file</code> - направить результат команды command в файл
+<code>$ command &gt;&gt; file</code> - добавить выводимые данные к файлу вместо его перезаписи</p>
+<p><code>set -C</code> - предотвращающение затирания данных (в оболочке bash)</p>
+<p><code>$ ls /undefined_dir &gt; f 2&gt; e</code> - отправить стандартный вывод в файл f, а
+стандартную ошибку в файл e (число 2 определяет идентификатор потока,
+который изменяет оболочка. Зна­чение 1 - стандартный вывод, а значение
+2 - стан­дартная ошибка)</p>
+<p><code>&gt;&amp;</code> - направить стандартную ошибку туда же, куда осуществляет­ся стандартный вывод
+- <code>$ ls /fffffffff &gt; f 2&gt;&amp;1</code></p>
+<p><code>$ head &lt; /proc/cpuinfo</code> - отправить файл на стандартный ввод команды (оператор &lt;)</p>
+<p><code>$ {some command} | {another command}</code> - pipe the output from one command to another</p>
+<h2 id="view-and-manage-processes">view and manage processes<a class="headerlink" href="#view-and-manage-processes" title="Permanent link">&para;</a></h2>
+<p><code>top</code> - view processes real time</p>
+<p><code>ps</code> - вывести список работающих процессов
+- <code>PID</code>  — идентификатор процесса
+- <code>TTY</code>  — оконечное устройство, в котором запущен процесс
+- <code>STAT</code>  — статус процесса: что он выполняет и где расположеа отведенная для него память
+    - S - ждущий процесс
+    - R  — работающий
+    &gt; описание всех символов можно найти на странице ps(1) в руководстве</p>
+<ul>
+<li><code>x</code> - показать все процессы, запущенные вами</li>
+<li><code>ax</code> - показать все процессы системы, а не только те, владельцем которых являетесь вы</li>
+<li><code>u</code> - включить детализированную информацию о процессах</li>
+<li><code>w</code> - показать полные названия команд, а не только те, что помещаются в одной строке</li>
+</ul>
+<p><code>pgrep {command}</code> - find a PID of a process</p>
+<p>Просмотреть информацию о конкретном процессе:</p>
+<p><code>ps {PID}</code> (<code>ps -u 3729</code>)</p>
+<blockquote>
+<p>ps u $$ - просмо­треть информацию о текущем процессе оболочки (параметр $$ является переменной оболочки, которая содержит значе­ние PID текущего процесса.)</p>
+</blockquote>
+<p><code>$ kill -9 PID</code> - убить процесс
+- <code>$ kill -STOP PID</code> - приостановить процесс
+- <code>$ kill -CONT PID</code> - возобновить процесс
+- <code>$ kill -KILL PID</code> - не дает процессу шанс прибрать а собой</p>
+<p><code>killall {process command}</code> - kill all instances of the process</p>
+<p><code>jobs</code> - узнать не висят ли в текущем терминале приостановленные процессы</p>
+<blockquote>
+<p>Ctrl + Z - отправить сигнал TSTP с по­мощью сочетания клавиш (приостановить процесс)</p>
+</blockquote>
+<p><code>fg</code> - возобновить процесс командой (вы­вести из фона)
+<code>bg</code> - перевести в фон
+<code>&amp;</code> - помещение процесса в фон</p>
+<ul>
+<li><code>$ gunzip file.gz &amp;</code> - запуск распаковки файла в фоне</li>
+</ul>
+<h2 id="file-permissions-and-ownership">File permissions and ownership<a class="headerlink" href="#file-permissions-and-ownership" title="Permanent link">&para;</a></h2>
+<p>this topic is well explained <a href="https://www.youtube.com/watch?v=wBp0Rb-ZJak">here</a> on 1:57:48</p>
+<p><code>-rw-rw-r--</code>:</p>
+<ul>
+<li>1st 3 symbols - root permissions</li>
+<li>2st 3 symbols - group permissions</li>
+<li>3st 3 symbols - all other users permissions</li>
+</ul>
+<h3 id="_1">Способы назначения прав<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><code>$ chmod g[roup]o[ther]+r[ead] file</code> - add 'read' permission for group and other users</p>
+<blockquote>
+<p>go-r - удалить эти права доступа</p>
+</blockquote>
+<p>7 = 'rwx'
+6 = 'rw-'
+5 = 'r-x'
+4 = 'r--'
+0 = '---'</p>
+<p><code>chmod -R[ecursively] 777 *</code> - изменить права доступа для всех файлов,
+вклчая дирректории и файлы в этих дирректориях (так же можно вместо
+звездочки указывать путь до каталога или файла)</p>
+<p><code>$ ln -s target linkname</code> - создать символическую ссылку от цели <code>target</code> к имени ссылки <code>linkname</code>
+- аргумент <code>linkname</code> - имя символической ссылки
+- аргумент <code>target</code> - задает путь к файлу или каталогу, к которому ведет ссылка
+- <code>-s</code> определяет символическую ссылку</p>
+<h2 id="_2">Архивирование и сжатие файлов<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="gzip">GZIP<a class="headerlink" href="#gzip" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>gzip file</code> - для сжатия</li>
+<li><code>gunzip file.gz</code> - декомпрессия файла <file>.gz и уда­ления суффикса из названия<blockquote>
+<p>команда gzip не создает архивы файлов, то есть она не упаковывает
+несколько файлов и каталогов в один файл. Для создания архива используйте команду <code>tar</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="tar">TAR<a class="headerlink" href="#tar" title="Permanent link">&para;</a></h3>
+<p><code>$ tar cvf archive.tar file1 file2 ...</code> || <code>$ tar -cf archive.tar folder/</code>
+<code>c</code> - активизирует режим создания
+<code>v</code> - активизирует подробный диагностический вывод, при котором
+команда tar отображает имена файлов и каталогов в архиве по мере
+работы с ними. Если добавить еще один флаг <code>v</code> , команда tar отобразит
+такие подробности, как размер файла и права доступа к нему
+<code>f</code> - обозначает файл-параметр. Следующий после этого флага аргумент в
+командной строке должен быть именем файла-архива (использовать всегда)</p>
+<p><code>$ tar xvf archive.tar</code> - распаковать указанный архив
+<code>x</code> - переводит команду tar в режим извлечения</p>
+<p><code>$ tar tvf archive.tar</code> - просмотреть файл .tar в режиме содержания - проверить целостность архива и посмотреть что внутри
+<code>t</code> - просмотреть файл .tar в режиме содержания
+<code>p</code> - сохранить права доступа
+<code>z</code> - автоматически задействовать команду gzip (как при извлечении, так и при создании архива)</p>
+<blockquote>
+<p>проверить сжатый архив -- <code>$ tar ztvf file.tar.gz</code></p>
+</blockquote>
+<h3 id="targz">Распаковка .tar.gz:<a class="headerlink" href="#targz" title="Permanent link">&para;</a></h3>
+<p>Медленный начальный способ:
+<code>$ gunzip file.tar.gz</code>
+<code>$ tar xvf file.tar</code></p>
+<p>Быстрый и продвинутый способ:
+    $ zcat file.tar.gz | tar xvf —
+    zcat == gunzip -dc:
+        -d - отвечает за деком­прессию
+        -c - отправляет результат на стандартный вывод (в данном случае команде tar)</p>
+<blockquote>
+<p>Файл .tgz — это то же самое, что и файл .tar.gz</p>
+</blockquote>
+<h3 id="_3">Другие утилиты сжатия:<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>bzip2 - соз­дает файлы <code>.bz2</code>, работает медленнее, но тектовики сжимает лучше чем gzip
+bunzip - декомпрессия файлов <code>.bz2</code></p>
+<blockquote>
+<p>параметры для обоих ком­понентов похожи на параметры команды gzip
+Для команды tar параметром компрессии/декомпрессии в ре­жиме bzip2 является символ j</p>
+</blockquote>
+<p>xz - компрессия / unxz - декомпрессия (ее аргументы сход­ны с параметрами команды gzip)
+<code>zip -r {name} {folder}</code> - создает архив .zip c указанной папкой внутри (<code>zip -r archive folder/</code>)
+<code>unzip {имя_архива}</code> - разархивация .zip архива в текущую папку</p>
+<h2 id="other-info">Other info<a class="headerlink" href="#other-info" title="Permanent link">&para;</a></h2>
+<p><code>sh {file_name}</code> - run any file as bash script (<code>.txt</code> as well)</p>
+<p><code>./{имя_файла}</code> - запуск исполняемых файлов через терминал</p>
+<p><code>tac {имя_файла}</code> - выводит содержимое файла в обратном порядке
+(начиная с последней строки, а не символы в обратном порядке)</p>
+<p><code>df</code> - показывает разделы на нашем жестком диске</p>
+<p><code>sudo !!</code> - run last command but with superuser rights</p>
+<p><code>sudo su</code> - change to root account</p>
+<p><code>s[witch]u[ser] {username}</code> - change user</p>
+<p>История запущенных команд сохраняется в файле bash history, поставь
+пробел перед командой, чтобы не сохранять:
+<code>pwd</code> - запишется в историю
+<code>pwd</code> - не запишется в историю</p>
+<p><code>w</code> - показывает кто на данный момент вошел в систему</p>
+<p><code>du -h -max</code> - показывает размеры и содержимое файлов
+<code>du -h</code> - показывает размер дирректорий</p>
+<p><code>look {expression}</code> - output all words starting with <code>expression</code></p>
+<p><code>factor {number}</code> - раскладывает число на множители</p>
+<p><code>mtr {site_url}</code> - альтернатива сетевым командам ping и trace route
+<code>ping {site_url}</code> - высылает запросы на сайт и получает ответы</p>
+<p><code>alt/esc + .</code> - вызвать команды, которые вводились пользователем ранее ("." - рядом с русской "ю")</p>
+<p><code>tr {replace_str} {replace_with}</code> - производит простейшую замену символов во входном потоке
+<code>echo "lol" | tr 'l' 'W'</code> --&gt; <code>WoW</code>
+<code>echo "DMITRY" | tr '[:upper:]' '[:lower:]'</code> - поменять регистр слова</p>
+<p><code>tree</code> - показывает структуру папок и каталого в древовидной форме (её надо устанавливать)</p>
+<p><code>uname</code> -a - выводит версию ядра используемой копии линукс и разрядность
+<code>lsb_release</code> -a - показывает дистрибутив используемой системы и основанных на ней дистрибутивов</p>
+<p><code>date</code> - показывает текущую дату и время
+<code>uptime</code> - показвает сколько времени работает система без выклюлчения и перезагрузки</p>
+<p><code>hostname</code> - показвает имя компьютера в сети</p>
+<p><code>shutdown</code> -h - завершает работу и выключает питание
+<code>reboot</code> - перезагрузка</p>
+<p><code>gedit {file_name}</code> - открывает указанный файл (не в терминале, а в приложении блокнота)</p>
+<p><code>wc {file_name}</code> - показывает сколько строк, слов и символов содержится в файле</p>
+<p><code>pstree</code> - показывает всю файловую структуру всех файлов и каталогов</p>
+<p><code>sudo apt autoremove</code> - удалит ненужные пакеты из загрузчика, чтобы он не забивался</p>
+<p><code>sudo apt autoclean</code> - очистит кэш приложений</p>
+<p><code>arch</code> - выведет архитектуру компьютера</p>
+<p><code>сonvert file1 file2 result_file.md</code> - позволяет конвертировать графические файлы в формат pdf
+    Sample: convert picture.tiff image.jpg 0.jpg result.pdf</p>
+<p><code>screenfetch</code> - показывает все о ситеме, о ядре, разрешении, версию
+шела, графическое оформле�ть дополнительно через репозиторийь
+дополнительно через репозиторий</p>
+<p><code>less {file_path &amp;&amp; name}</code> - постранично просмотреть большой файл
+- <code>space</code> - переместиться на след страницу
+- <code>B</code> - вернуться на страницу назад
+- <code>Q</code> - выйти из режима чтения файла
+- <code>/word</code> - отыскать слово word
+- <code>?word</code> - поиск в обратном направлении
+- <code>N</code> - продолжить поиск после того как результат будет найдет</p>
+<p><code>diff file1 file2</code> - увидеть различия между двумя текстовыми файлами</p>
+<p><code>cmp {file0} {file1}</code> - сравнение двух файлов (сравниение эта команда
+начинает с первых символов, если они не совпадают, то значит файлы уже
+не совпадают и дальше он проверять не будет)</p>
+<p><code>file {имя_файла}</code> - выводит информацию о типе файла (кодировка, битность, тип файла и тд)</p>
+<p><code>locate</code> - для поиска файлов. Вместо отыскивания файла в реальном
+времени эта команда осуществляет поиск в индек­се файлов, который
+система периодически создает. Поиск с помощью команды <code>locate</code>
+происходит <strong>гораздо быстрее</strong>, чем с помощью <code>find</code>, но если искомый
+файл появился после создания индекса, команда <code>locate</code> не сможет его
+найти.</p>
+<p><code>head [number] {path_to_file}</code> - вывод первых {number} строк файла (default = 10)
+<code>tile [n] {file_dir&amp;&amp;name}</code> - вывод последних n строк файла (def. - 10)</p>
+<p><code>sort {file_name}</code> - output sorted file content (file is not changed)
+    - <code>-n</code> - выстроить строки в порядке следования чисел
+    - <code>-r</code> - изменяет порядок следо­вания на обратный</p>
+<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">&para;</a></h3>
+<p><code>find {dir} [flag]</code> - find file</p>
+<p>Example: <code>find . [-maxdepth {number}] -type f [-not] -iname "*.php"</code> find all files, which ends [not] in .php/PHP (iname stands for Ignore case) in cur. dir.</p>
+<p>if u replace 'f' in command above for 'd' it's gonna search for dirs</p>
+<p>Searching for files with particular permissions:</p>
+<p><code>find . -type f -perm 0664</code> - find files in cur. dir. with permissions 664</p>
+<p><code>find . -syze +/-1M</code> - find all files in cur. dir that r more/less than 1M in size</p>
+<blockquote>
+<p>u also can combine commands searching for name and size at once</p>
+</blockquote>
+<h3 id="grep">grep<a class="headerlink" href="#grep" title="Permanent link">&para;</a></h3>
+<p><code>grep {search_str} {where to look}</code> - выдает строки из файла или входного потока, которые соответству­ют какому-либо выражению</p>
+<p><code>-i</code> - ignore case
+<code>-n</code> - outputs line number of entry in file
+<code>-v</code> - инвертирует условие поиска, то есть выдает все строки, не отвечающие условию</p>
+<p><code>find . -type f -iname "*.php" -exec grep -i -n "function" {} +</code></p>
+<blockquote>
+<p><code>-exec</code> executes next command with the output from the 1st command
+<code>{} +</code> syntax ends <code>-exec</code> flag</p>
+<p>Существует также более мощный вариант команды под названием <code>egrep</code> (сино­ним команды <code>grep -E</code>).</p>
+</blockquote>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="General info" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                General info
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../other_info/" title="Other info" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Other info
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+      <script src="../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['instant'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
