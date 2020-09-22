@@ -4,7 +4,7 @@ repo_name: linux knowledge
 nav:
     - General info: index.md
     - Terminal: terminal_commands.md
-    - Root directories: linux_dirs.md
+    - Root directories: root_dirs.md
     - Other info: other_info.md
 theme:
     name: material
