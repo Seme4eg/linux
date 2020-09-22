@@ -2,7 +2,9 @@ site_name: linux knowledge
 repo_url: https://github.com/Seme4eg/linux
 repo_name: linux knowledge
 nav:
-    - Terminal: index.md
+    - Installation and setup: index.md
+    - Terminal: terminal_commands.md
+    - Root directories: linux_dirs.md
 theme:
     name: material
     palette:
@@ -13,7 +15,6 @@ theme:
         text: Montserrat
     features:
         - instant
-        - tabs
     icon:
         repo: fontawesome/brands/gitkraken
 
