@@ -1,6 +1,8 @@
 # Terminal commands
 ## basics
-`man {command}` - get documentation for {command}
+`man[ual] {command}` - get documentation for {command}
+
+> `man man` to get more info for types of pages for section numbers
 
 `cat {имя_файла} {file_name}` - выводит содеримое одного или нескольких файлов
 
@@ -178,6 +180,8 @@ xz - компрессия / unxz - декомпрессия (ее аргумен
 `sh {file_name}` - run any file as bash script (`.txt` as well)
 
 `./{имя_файла}` - запуск исполняемых файлов через терминал
+
+`whereis {programm/exec_file}` - outputs path to execution file of the command
 
 `tac {имя_файла}` - выводит содержимое файла в обратном порядке
 (начиная с последней строки, а не символы в обратном порядке)
